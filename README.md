@@ -1,10 +1,10 @@
 # Social Share Button
 
-This is a gem to helper you quick create a share feature in you Rails apps.
+This is a gem to help you quickly add social share buttons to your rails site.
 
 [![Gem Version](https://badge.fury.io/rb/social-share-button.svg)](https://badge.fury.io/rb/social-share-button)
 
-# Sites list
+# Supported Sites
 
 * Facebook
 * Twitter
@@ -13,7 +13,6 @@ This is a gem to helper you quick create a share feature in you Rails apps.
 * QZone
 * Google Bookmark
 * Delicious
-* Tumblr
 * Pinterest
 * Email
 * LinkedIn
@@ -24,7 +23,6 @@ This is a gem to helper you quick create a share feature in you Rails apps.
 * Reddit
 * Hacker News
 * Telegram
-* WhatsApp
 
 ## Screenshot
 
@@ -35,7 +33,7 @@ This is a gem to helper you quick create a share feature in you Rails apps.
 In your `Gemfile`:
 
 ```ruby
-gem 'social-share-button'
+gem 'social-share-button', github: 'daqing/social-share-button'
 ```
 
 Old version for IE and lower browser support:
@@ -65,28 +63,7 @@ More site names you can visit https://github.com/huacnlee/social-share-button/bl
 
 ## Usage
 
-You need add require css,js file in your app assets files:
-
-`app/assets/javascripts/application.coffee`
-
-```
-#= require social-share-button
-#= require social-share-button/wechat # if you need use WeChat
-```
-
-`app/assets/stylesheets/application.scss`
-
-```
-*= require social-share-button
-```
-
-In Rails 4.1.6 , use `@import` to require files:
-
-`app/assets/stylesheets/application.css.scss`
-
-```
-@import "social-share-button";
-```
+For static assets(css, js), please refer to the npm package: [@v8os/social-share-button-js](https://www.npmjs.com/package/@v8os/social-share-button-js)
 
 Then you can use `social_share_button_tag` helper in views, for example `app/views/posts/show.html.erb`
 
@@ -122,13 +99,6 @@ You can also specify the URL that it links to:
 <%= social_share_button_tag(@post.title, :url => "http://myapp.com/foo/bar", :image => "http://foo.bar/images/a.jpg", desc: "The summary of page", via: "MyTwitterName") %>
 ```
 
-For the Tumblr there are an extra settings, prefixed with : `data-*`
-
-```erb
-<%= social_share_button_tag(@post.title, :image => "https://raw.github.com/vkulpa/social-share-button/master/lib/assets/images/sprites/social-share-button/tumblr.png", :'data-type' => 'photo') %>
-<%= social_share_button_tag(@post.title, :'data-source' => "https://raw.github.com/vkulpa/social-share-button/master/lib/assets/images/sprites/social-share-button/tumblr.png", :'data-type' => 'photo') %>
-```
-
 Those two above calls are identical.
 Here are the mapping of attributes depending on you data-type parameter
 
@@ -162,7 +132,7 @@ You will need to test from a live site or Facebook will reject it; localhost wil
 
 Yes, you can override social-share-button base css to change the icon size.
 
-In you `app/assets/stylesheets/application.scss`:
+In you `app/javascript/stylesheets/application.scss`:
 
 ```scss
 $size: 24px;
