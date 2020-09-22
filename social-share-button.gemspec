@@ -19,5 +19,4 @@ Gem::Specification.new do |s|
   s.files        = Dir.glob("{bin,lib,config,app/assets/javascripts,app/assets/stylesheets,app/assets/images}/**/*")
   s.files       += %w(README.md CHANGELOG.md)
   s.add_development_dependency "rails"
-  s.add_runtime_dependency "coffee-rails"
 end
